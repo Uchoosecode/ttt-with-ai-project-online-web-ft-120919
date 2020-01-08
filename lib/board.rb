@@ -10,17 +10,26 @@ class Board
     # @cells = cells
   end
   
-  def cells
-    @cells
-  end
+  # def cells
+  #   @cells
+  # end
   
   def reset!
     @cells.clear
     @cells = Array.new(9, " ")
   end
-    # binding.pry
+   
   def display
-    p @cells = ["X", "O", "X", "O", "X", "X", "O", "X", "O"].each_slice(3) { |a| p a }
+    @cells
+    print " #{@cells[0]} | #{@cells[1]} | #{@cells[2]} "
+    print "-----------"
+    print " #{@cells[3]} | #{@cells[4]} | #{@cells[5]} "
+    print "-----------"
+    print " #{@cells[6]} | #{@cells[7]} | #{@cells[8]} "
+  end
+    
+  def position(user)
+    @cells[user.to_i]
   end
   
   
